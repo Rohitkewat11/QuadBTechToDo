@@ -2,8 +2,8 @@ import { createSlice, nanoid, current } from "@reduxjs/toolkit";
 // import { useState } from "react";
 
 const initialState = {
-  todos:[{id:1,task:"hello world"||JSON.parse(localStorage.getItem('task'))}]
-//   todos: JSON.parse(localStorage.getItem("task")),
+//   todos:[{id:1,task:"hello world"||JSON.parse(localStorage.getItem('task'))}]
+  todos: JSON.parse(localStorage.getItem("task")),
 };
 
 const todoSlice = createSlice({
@@ -17,10 +17,10 @@ const todoSlice = createSlice({
       };
       state.todos.push(todo);
       localStorage.setItem("task", JSON.stringify(current(state.todos)));
-      console.log(current(state.todos));
     },
     removeTask(state, action) {
       state.todos = state.todos.filter((item) => item.id !== action.payload);
+      localStorage.setItem('task',JSON.stringify(state.todos));
     },
   },
 });
