@@ -2,7 +2,7 @@ import { createSlice, nanoid, current } from "@reduxjs/toolkit";
 // import { useState } from "react";
 
 const initialState = {
-//   todos:[{id:1,task:"hello world"||JSON.parse(localStorage.getItem('task'))}]
+  // todos:[{id:1,task:"hello world"}||JSON.parse(localStorage.getItem("task"))]
   todos: JSON.parse(localStorage.getItem("task")),
 };
 

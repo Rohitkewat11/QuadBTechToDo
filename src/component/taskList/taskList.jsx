@@ -16,10 +16,11 @@ export function TaskList() {
     console.log(active);
   }
 
+
   return (
     <>
       <div className="d-flex justify-content-center">
-        <div className="w-25 mt-5">
+        <div className="w-50 mt-5">
           {taskList.map((item) => (
             <li
               key={item.id}
